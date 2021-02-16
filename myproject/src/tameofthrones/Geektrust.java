@@ -9,9 +9,7 @@ import  java.util.*;
 public class Geektrust {
 
 	public static void main(String[] args)throws Exception {
-		//Read input from file input.txt
-		//String local_dir=System.getProperty("user.dir");
-		//File file=new File(local_dir+"\\src\\tameofthrones\\input.txt");	
+		//Read input from file input.txt	
 		String filePath=args[0];
 		File file=new File(filePath);
 		Scanner sc=new Scanner(file);
@@ -25,10 +23,14 @@ public class Geektrust {
 			String encoded_message=input[1].toUpperCase();
 			
 			//check support by decoding message
-			if(decode(kingdomName,encoded_message.replaceAll("\\s","")))
-			{
-				result++;
-				output=output+kingdomName +" ";
+			if(!output.contains(kingdomName))
+			{	
+
+				if(decode(kingdomName,encoded_message.replaceAll("\\s","")))
+				{
+					result++;
+					output=output+kingdomName +" ";
+				}
 			}
 			
 		}
