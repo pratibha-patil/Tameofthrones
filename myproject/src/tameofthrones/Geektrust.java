@@ -22,10 +22,10 @@ public class Geektrust {
 			String kingdomName=input[0].toUpperCase();
 			String encoded_message=input[1].toUpperCase();
 			
-			//check support by decoding message
+			//check if support of kingdom is already there
 			if(!output.contains(kingdomName))
 			{	
-
+				//check support by decoding message
 				if(decode(kingdomName,encoded_message.replaceAll("\\s","")))
 				{
 					result++;
